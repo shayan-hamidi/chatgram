@@ -8,3 +8,13 @@ body {
 .bg-image {
   background-image: url("../assets/main-bg.png");
 }
+.selected-user {
+  @apply bg-slate-300;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -46,3 +46,22 @@ export async function fetchUsers(mySelf: userProps, setUsers: any) {
   const myUsers = await data.json();
   setUsers(myUsers.filter((user: any) => user.email !== mySelf?.email));
 }
+
+export async function fetchMessage(
+  sender: any,
+  reciever: any,
+  setMessages: any
+) {
+  if (sender && reciever) {
+    try {
+      const res = await fetch(
+        `/messages?sender=${sender?.email}&reciever=${reciever?.email}`
+      );
+      const data = await res?.json();
+      setMessages(data);
+    } catch (err) {
+      console.log(err);
+      setMessages(null);
+    }
+  }
+}

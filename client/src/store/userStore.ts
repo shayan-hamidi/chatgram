@@ -1,4 +1,4 @@
-import { userState } from "@/types";
+import { selectedUserState, userState } from "@/types";
 import { create } from "zustand";
 
 export const useUser = create<userState>((set) => ({
@@ -9,4 +9,14 @@ export const useUser = create<userState>((set) => ({
 export const useAllUsers = create((set) => ({
   users: undefined,
   setUsers: (users: any) => set({ users }),
+}));
+
+export const useSelectedUser = create<selectedUserState>((set) => ({
+  selectedUser: undefined,
+  setSelectedUser: (user) => set({ selectedUser: user }),
+}));
+
+export const useMessages = create((set) => ({
+  messages: undefined,
+  setMessages: (messages: any) => set({ messages }),
 }));

@@ -1,21 +1,22 @@
-import { userProps } from "@/types";
-import { SearchIcon } from "@/utils/icons";
-import Image from "next/image";
+import { userProps } from '@/types'
+import { SearchIcon } from '@/utils/icons'
+import Image from 'next/image'
+import React from 'react'
 
-export default function SearchBar({ user }: { user: userProps }) {
+function SearchBar({user}:{user:userProps}) {
   return (
     <div className="flex gap-4">
       <div className="avatar online">
         <div className="w-12 rounded-full ring">
           <Image
-            src={user?.imageId ?? ""}
+            src={user?.imageId || ""}
             width={256}
             height={256}
             alt="avatar"
           />
         </div>
       </div>
-      <div className="relative w-full ">
+      <div className="relative w-full">
         <input
           type="text"
           placeholder="Search"
@@ -28,3 +29,5 @@ export default function SearchBar({ user }: { user: userProps }) {
     </div>
   );
 }
+
+export default SearchBar
